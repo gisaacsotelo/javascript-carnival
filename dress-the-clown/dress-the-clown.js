@@ -12,12 +12,22 @@ let currentHead = document.getElementById('js-head')
 let currentBody = document.getElementById('js-head')
 let currentShoes = document.getElementById('js-head')
 
+console.log(currentHead.src)
+console.log(typeof currentHead.src)
+console.log(currentHead.src.slice(-9))
+
+/* 
+slice: 
+  all heads have last strings 'headx.png' = 9 so -9 to slice the last 9 digits
+*/
+
 //------------- Global variable declarations
 
 let allHeads = []
 let allBodies = []
 let allShoes = []
-let currentChangingArray = ['head', 'body', 'shoes']
+let ChangingArray = ['head', 'body', 'shoes']
+let currentArrayIndex = 0
 
 //-------------- Defaults
 /*
@@ -25,10 +35,12 @@ Just practicing loops and pushing can be also declared directly, but DRY
 'i' starts in 0 and goes to 5 since there are only 6 images for head/body/shoes -  so goes from 0-5
 */
 for (let i = 0; i <= 5; i++) {
-  allHeads.push(`./images/${currentChangingArray[0]}${i}.png`)
-  allBodies.push(`./images/${currentChangingArray[1]}${i}.png`)
-  allShoes.push(`./images/${currentChangingArray[2]}${i}.png`)
+  allHeads.push(`./images/${ChangingArray[0]}${i}.png`)
+  allBodies.push(`./images/${ChangingArray[1]}${i}.png`)
+  allShoes.push(`./images/${ChangingArray[2]}${i}.png`)
 }
+
+console.log(allHeads)
 
 //^-----------------------------------
 //^------- Event listeners ( ͡° ͜ʖ ͡°)
@@ -69,13 +81,45 @@ document.addEventListener('keyup', function (event) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+/* 
+  Pseudo:
+  - Check if it was left/up or right/down
+  - check current index of current clothing /array
+  - if overflow up reset
+  - if "underflow" down highest index / try .lastchild
+*/
 //~~~ loopTheArray
+let loopTheArray = (pressedArrow) =>
+  pressedArrow == 'ArrowLeft' ? moveLeft() : moveRight()
 
-function loopTheArray(pressedArrow) {
-  console.log(pressedArrow)
+//~~~ moveLeft
+function moveLeft() {
+  currentArrayIndex = parseInt(currentHead.src.slice(-5, -4))
+  // console.log(currentArrayIndex, typeof currentArrayIndex)
+  // 0-5
+  currentArrayIndex = currentArrayIndex === 0 ? 5 : --currentArrayIndex
+  console.log(currentArrayIndex, typeof currentArrayIndex)
+  currentHead.src = `./images/${ChangingArray[0]}${currentArrayIndex}.png`
+}
+
+//~~~ moveRight
+function moveRight() {
+  currentArrayIndex = parseInt(currentHead.src.slice(-5, -4))
+  // console.log(currentArrayIndex, typeof currentArrayIndex)
+  // 0-5
+  currentArrayIndex = currentArrayIndex === 5 ? 0 : ++currentArrayIndex
+  console.log(currentArrayIndex, typeof currentArrayIndex)
+  currentHead.src = `./images/${ChangingArray[0]}${currentArrayIndex}.png`
 }
 
 //~~~ hangeIterationTarget
 function changeIterationTarget(pressedArrow) {
   console.log(pressedArrow)
 }
+
+/*
+! NOTE:
+!   So far I have been adding way to many comments I do know that, it is just
+!   for now while practicing, I do know that too many comments is a bad code practice too.
+!   It is a way to reiterate to myself what Im coding will reduce the amount little by little
+*/
