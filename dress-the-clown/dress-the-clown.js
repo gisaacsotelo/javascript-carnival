@@ -8,11 +8,19 @@ console.log('Dress The Clown!')
 ^---------------------------------
 */
 
+let currentHead = document.getElementById('js-head')
+let currentBody = document.getElementById('js-head')
+let currentShoes = document.getElementById('js-head')
 
+/* 
+------- variable declarations
+*/
 
+let allHeads = []
+let allBodies = []
+let allShoes = []
 
-
-
+changeClownHead()
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,6 +30,6 @@ console.log('Dress The Clown!')
 
 //~~~ changeClownHead
 
-function changeClownHead {
-
+function changeClownHead() {
+  currentHead.src = './images/head2.png'
 }
