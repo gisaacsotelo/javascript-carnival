@@ -17,17 +17,17 @@ let currentShoes = document.getElementById('js-head')
 let allHeads = []
 let allBodies = []
 let allShoes = []
+let currentChangingArray = ['head', 'body', 'shoes']
 
 //-------------- Defaults
 /*
-head defaults:
 Just practicing loops and pushing can be also declared directly, but DRY
-'i' starts in 1 and goes to 5 since there are only 5 images for head -  so goes from 1-5
+'i' starts in 0 and goes to 5 since there are only 6 images for head/body/shoes -  so goes from 0-5
 */
-for (let i = 1; i <= 5; i++) {
+for (let i = 0; i <= 5; i++) {
   allHeads.push(`./images/head${i}.png`)
-  allBodies.push(`./images/head${i}.png`)
-  allShoes.push(`./images/head${i}.png`)
+  allBodies.push(`./images/body${i}.png`)
+  allShoes.push(`./images/shoes${i}.png`)
 }
 
 changeClownHead()
