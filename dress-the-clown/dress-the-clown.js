@@ -25,9 +25,9 @@ Just practicing loops and pushing can be also declared directly, but DRY
 'i' starts in 0 and goes to 5 since there are only 6 images for head/body/shoes -  so goes from 0-5
 */
 for (let i = 0; i <= 5; i++) {
-  allHeads.push(`./images/head${i}.png`)
-  allBodies.push(`./images/body${i}.png`)
-  allShoes.push(`./images/shoes${i}.png`)
+  allHeads.push(`./images/${currentChangingArray[0]}${i}.png`)
+  allBodies.push(`./images/${currentChangingArray[1]}${i}.png`)
+  allShoes.push(`./images/${currentChangingArray[2]}${i}.png`)
 }
 
 //^-----------------------------------
@@ -43,8 +43,8 @@ todo: When right || left detected, we iterate through current array ("Change clo
 todo: (these arrays are all 0-5)
 todo:   - When located on index[5] and right detected we move to [0]
 todo:   - When located on index[0] and left detected we move to [5]
-
 */
+
 /* 
 Key codes for the arrows:
 Up: 38
@@ -52,22 +52,13 @@ Down: 39
 Right: 40
 Left: 37
 */
+
 document.addEventListener('keyup', function (event) {
-  switch (
-    event.keyCode //I think it is depreciated since it is the same thing, but wont dig much since avaoiding rabbits rn
-  ) {
-    case 37:
-      console.log('Pressed Left arrow')
-      break
-    case 38:
-      console.log('Pressed Up arrow')
-      break
-    case 39:
-      console.log('Pressed Down arrow')
-      break
-    case 40:
-      console.log('Pressed Right arrow')
-      break
+  console.log(event.key)
+  if (event.key === 37 || event.key === 40) {
+    console.log(event.key)
+  } else if (event.key === 38 || event.key === 39) {
+    console.log(event.key)
   }
 })
 
@@ -79,8 +70,11 @@ document.addEventListener('keyup', function (event) {
 
 //~~~ changeClownHead
 
-function loopTheArray() {
-  currentHead.src = './images/head2.png'
+function loopTheArray(pressedArrow) {
+  console.log(pressedArrow)
+  // currentHead.src = './images/head2.png'
 }
 
-function changeIterationTarget() {}
+function changeIterationTarget(pressedArrow) {
+  console.log(pressedArrow)
+}
