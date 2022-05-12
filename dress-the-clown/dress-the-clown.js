@@ -4,7 +4,7 @@
 console.log('Dress The Clown!')
 /* 
 ^---------------------------------
-^---------- DOM retrieves
+^---------- DOM retrieves (͠≖ ͜ʖ͠≖)
 ^---------------------------------
 */
 
@@ -30,16 +30,45 @@ for (let i = 0; i <= 5; i++) {
   allShoes.push(`./images/shoes${i}.png`)
 }
 
-changeClownHead()
+//^-----------------------------------
+//^------- Event listeners ( ͡° ͜ʖ ͡°)
+
+/* 
+Key codes for the arrows:
+Up: 38
+Down: 39
+Right: 40
+Left: 37
+*/
+document.addEventListener('keyup', function (event) {
+  switch (
+    event.keyCode //I think it is depreciated since it is the same thing, but wont dig much since avaoiding rabbits rn
+  ) {
+    case 37:
+      console.log('Pressed Left arrow')
+      break
+    case 38:
+      console.log('Pressed Up arrow')
+      break
+    case 39:
+      console.log('Pressed Down arrow')
+      break
+    case 40:
+      console.log('Pressed Right arrow')
+      break
+  }
+})
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~ FUNCTIONS 
+~~~~~~~~~~~ FUNCTIONS (⌐□_□)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 //~~~ changeClownHead
 
-function changeClownHead() {
+function loopTheArray() {
   currentHead.src = './images/head2.png'
 }
+
+function changeIterationTarget() {}
