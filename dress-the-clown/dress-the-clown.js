@@ -35,7 +35,7 @@ for (let i = 0; i <= 5; i++) {
 
 /* 
 todo-------------- Some pseudo:
-| Detect arrow keys
+| Detect arrow keys (reduced from switch to if else)
 todo: When Up || down we change the Iteration target - [0-2] - head,body,shoes
 todo:   - When located on index [3] and arrow up detected restart from 0
 todo:   - When loctaed on index [0] and down detcted go to index [3]
@@ -47,18 +47,19 @@ todo:   - When located on index[0] and left detected we move to [5]
 
 /* 
 Key codes for the arrows:
-Up: 38
-Down: 39
-Right: 40
-Left: 37
+After testing event.key is a string that contains the following
+ArrowUp
+ArrowDown
+ArrowRight
+ArrowLeft
+So we dont need the codes anymore
 */
 
 document.addEventListener('keyup', function (event) {
-  console.log(event.key)
-  if (event.key === 37 || event.key === 40) {
-    console.log(event.key)
-  } else if (event.key === 38 || event.key === 39) {
-    console.log(event.key)
+  if (event.key == 'ArrowLeft' || event.key == 'ArrowRight') {
+    loopTheArray(event.key)
+  } else if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+    changeIterationTarget(event.key)
   }
 })
 
@@ -68,13 +69,13 @@ document.addEventListener('keyup', function (event) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-//~~~ changeClownHead
+//~~~ loopTheArray
 
 function loopTheArray(pressedArrow) {
   console.log(pressedArrow)
-  // currentHead.src = './images/head2.png'
 }
 
+//~~~ hangeIterationTarget
 function changeIterationTarget(pressedArrow) {
   console.log(pressedArrow)
 }
