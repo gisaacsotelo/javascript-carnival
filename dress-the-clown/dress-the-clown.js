@@ -1,5 +1,27 @@
-  // -    -   -   -   -  //
- // JAVASCRIPT CARNIVAL //
 // -    -   -   -   -  //
+// JAVASCRIPT CARNIVAL //
+// -    -   -   -   -  //
+console.log('Dress The Clown!')
+/* 
+^---------------------------------
+^---------- DOM retrieves
+^---------------------------------
+*/
 
-console.log("Dress The Clown!")
+
+
+
+
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~ FUNCTIONS 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+//~~~ changeClownHead
+
+function changeClownHead {
+
+}
