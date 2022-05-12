@@ -34,6 +34,18 @@ for (let i = 0; i <= 5; i++) {
 //^------- Event listeners ( ͡° ͜ʖ ͡°)
 
 /* 
+todo-------------- Some pseudo:
+| Detect arrow keys
+todo: When Up || down we change the Iteration target - [0-2] - head,body,shoes
+todo:   - When located on index [3] and arrow up detected restart from 0
+todo:   - When loctaed on index [0] and down detcted go to index [3]
+todo: When right || left detected, we iterate through current array ("Change clothes")
+todo: (these arrays are all 0-5)
+todo:   - When located on index[5] and right detected we move to [0]
+todo:   - When located on index[0] and left detected we move to [5]
+
+*/
+/* 
 Key codes for the arrows:
 Up: 38
 Down: 39
