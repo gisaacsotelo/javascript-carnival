@@ -25,8 +25,8 @@ Noticed that all the .src routes end in a similar way:
          .../dress-the-clown/images/shoes4.png
 the only things that changes are the caracters after ".images/" and before ".png"
 so we can exploit that w slice method
-will make 2 variables one for the changing outfit (head, body, shoes)
-one for the index that is showing, they all have number from 0-5
+will make 3 variables one for the changing outfit (head, body, shoes)
+one for the index that is showing, and one for the picture number they all have number from 0-5
 */
 // Testing:
 // console.log(typeof currentHead.src) // currently string, will slice and parseint to get a number
