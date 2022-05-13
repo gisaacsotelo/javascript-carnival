@@ -10,3 +10,7 @@ console.log('Whack-a-Mole!')
 
 let cells = document.getElementsByTagName('td')
 console.log(cells)
+
+let randomizer = 0
+
+let randomNumber = () => Math.floor(Math.random() * 26)
