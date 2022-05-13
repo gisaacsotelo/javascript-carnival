@@ -8,13 +8,14 @@ console.log('Whack-a-Mole!')
 let cells = document.getElementsByTagName('td')
 let mole = document.createElement('img')
 let audio = new Audio()
+let newHeigth
 
 //defaults
 mole.src = 'mole.PNG'
 audio.src = 'whack-audio.wav'
 
 //checkign how tall to make the image:
-let newHeigth = cells[0].offsetHeight
+newHeigth = cells[0].offsetHeight
 newHeigth = Math.floor(newHeigth * 0.9)
 newHeigth = `${newHeigth}px`
 mole.style.width = newHeigth
